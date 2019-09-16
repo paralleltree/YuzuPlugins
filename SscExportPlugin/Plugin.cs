@@ -117,7 +117,7 @@ namespace SscExportPlugin
                 buffer.Add(Tuple.Create(bullet.Position.Tick, $"{GetTime(bullet.Position.Tick)},shot,{GetOffset(bullet.Position.LaneOffset)},1,1"));
             }
 
-            using (var writer = new StreamWriter(args.OutputPath))
+            using (var writer = new StreamWriter(args.OutputPath, false, Encoding.GetEncoding("shift-jis")))
             {
                 writer.WriteLine($"#title {book.Title}");
                 writer.WriteLine($"#artist {book.ArtistName}");
